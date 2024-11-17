@@ -4,11 +4,13 @@ import Sidebar from '../components/Sidebar'
 
 const DefaultLayout:FC = () => {
   return (
-    <div className='flex'>
-        <Sidebar/>
+    <div className='flex h-screen bg-[#a8c7d0] p-3 gap-3'>
+      <Sidebar />
+      <div className="bg-white w-full rounded-xl p-4">
         <Suspense fallback={<>Loader...</>}>
-            <Outlet/>
+          <Outlet/>
         </Suspense>
+      </div>
     </div>
   )
 }

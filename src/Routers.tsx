@@ -2,13 +2,15 @@ import { FC, lazy } from "react"
 import { Route, Routes } from "react-router-dom"
 import DefaultLayout from "./layouts/default"
 
-const Routers:FC = () => {
+const Routers: FC = () => {
+    const LazyHomePage = lazy(async () => await import('./pages/HomePage'))
+    const LazyChapterPage = lazy(async () => await import('./pages/ChapterPage'))
     return (
         <>
             <Routes>
                 <Route element={<DefaultLayout/>}>
-                    <Route path="/" element={<>asdaasdasdasd</>}/>
-                    <Route path="/1" element={<>asdaasdasdasd1</>}/>
+                    <Route path="/" element={<LazyHomePage/>}/>
+                    <Route path="/:chapterId" element={<LazyChapterPage/>}/>
                 </Route>
             </Routes>
         </>
