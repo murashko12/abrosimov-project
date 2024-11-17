@@ -7,7 +7,7 @@ const DefaultLayout:FC = () => {
     <div className='flex h-screen bg-[#a8c7d0] p-3 gap-3'>
       <Sidebar />
       <div className="bg-white w-full rounded-xl p-4">
-        <Suspense fallback={<>Loader...</>}>
+        <Suspense fallback={<div className="w-full h-full flex items-center justify-center">Loader...</div>}>
           <Outlet/>
         </Suspense>
       </div>
