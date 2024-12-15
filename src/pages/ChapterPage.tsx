@@ -10,7 +10,6 @@ const ChapterPage = () => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<any>(null)
 
-    const htmlContain = ( htmlString: string ) => htmlString.replace(/<[^>]+>/g, ' ')
 
     useEffect(() => {
         const fetchArticles = async () => {
