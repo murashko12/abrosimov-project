@@ -10,6 +10,8 @@ const ChapterPage = () => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<any>(null)
 
+    const htmlContain = ( htmlString: string ) => htmlString.replace(/<[^>]+>/g, ' ')
+
     useEffect(() => {
         const fetchArticles = async () => {
             try {
@@ -22,7 +24,7 @@ const ChapterPage = () => {
             }
         }
         fetchArticles()
-    }, [article])
+    }, [chapterId])
 
     if (loading) {
         return <div>Загрузка статей...</div>
@@ -34,8 +36,8 @@ const ChapterPage = () => {
 
     return (
         <div>
-            <h2>{article?.title}</h2>
-            <p>{article?.content}</p>
+            <h1 className="text-[38px]">{article?.title}</h1>
+            <div className="customParser text-beige-500" dangerouslySetInnerHTML={{ __html: article?.content }} />
         </div>
     )
 }

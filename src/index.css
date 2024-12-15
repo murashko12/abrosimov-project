@@ -14,3 +14,34 @@
   box-sizing: border-box;
 }
 
+.customParser > ul {
+    list-style-type: disc; /* Определяет тип маркера (точка) */
+    padding-left: 40px; /* Отступ слева для маркеров */
+}
+
+
+
+.customParser > ol {
+  list-style-type: decimal;
+  padding-left: 40px;   
+}
+
+.customParser > h1 {
+  font-size: 38px;
+}
+
+.customParser > h2 {
+  font-size: 32px;
+}
+
+.customParser > h3 {
+  font-size: 24px;
+}
+.ql-snow .ql-picker-options{
+  background-color: rgb(247 248 251 )!important;
+  border-radius: 5px;
+}
+.ql-snow .ql-tooltip{
+  left: 0!important;
+  top: 0!important;
+}
